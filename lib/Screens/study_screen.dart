@@ -88,11 +88,17 @@ class StudyScreen extends StatelessWidget {
                 flex: 3,
                 child: Padding(
                   padding: const EdgeInsets.all(24.0),
-                  child: SvgPicture.asset(
-                    subject.iconPath,
+                  child: ColorFiltered(
                     colorFilter: ColorFilter.mode(
                       Theme.of(context).colorScheme.primary,
                       BlendMode.srcIn,
+                    ),
+                    child: SvgPicture.asset(
+                      subject.iconPath,
+                      width: 60,  // Adjust the size of the SVG image
+                      height: 60,
+                      placeholderBuilder: (BuildContext context) =>
+                          const CircularProgressIndicator(),
                     ),
                   ),
                 ),
