@@ -39,17 +39,3 @@ class ThemeProvider with ChangeNotifier {
     );
   }
 
-  ThemeData get darkTheme {
-    return ThemeData.dark().copyWith(
-      useMaterial3: true,
-      primaryColor: Colors.blue,
-      scaffoldBackgroundColor: Colors.grey[900],
-      cardTheme: CardTheme(
-        elevation: 2,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
-    );
-  }
-}
