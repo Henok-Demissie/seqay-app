@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:intl/intl.dart';
 import 'dart:async';
+import 'dart:math'; // Import for Random
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -15,6 +16,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
   late DateTime currentTime;
   late Timer timer;
 
+  // Define a list of study tips
+  final List<String> _studyTips = [
+    "Take regular breaks! Your brain needs time to process information.",
+    "Teach what you've learned to someone else to solidify your understanding.",
+    "Practice past papers to get familiar with the exam format.",
+    "Stay hydrated and get enough sleep for optimal brain function.",
+    "Create a dedicated study space to minimize distractions.",
+    "Use flashcards for memorizing key terms and concepts.",
+    "Set realistic study goals and reward yourself for achieving them.",
+    "Did you know? The average attention span is around 20 minutes.",
+    "Mnemonics can be a great way to remember lists or sequences."
+  ];
+  late String _currentStudyTip;
+
   @override
   void initState() {
     super.initState();
@@ -24,6 +39,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
         currentTime = DateTime.now();
       });
     });
+    // Select a random tip on init
+    _currentStudyTip = _studyTips[Random().nextInt(_studyTips.length)];
   }
 
   @override
@@ -47,12 +64,64 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
           ),
           const SizedBox(height: 20),
+          _buildStudyTipCard(), // Added Study Tip Card
+          const SizedBox(height: 20),
           _buildCountdownTimer(),
           const SizedBox(height: 20),
           _buildPerformanceCard(),
           const SizedBox(height: 20),
           _buildSubjectProgress(),
         ],
+      ),
+    );
+  }
+
+  // New widget for displaying the study tip
+  Widget _buildStudyTipCard() {
+    return Card(
+      elevation: 2,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Container(
+        padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Theme.of(context).colorScheme.secondaryContainer.withOpacity(0.7),
+              Theme.of(context).colorScheme.tertiaryContainer.withOpacity(0.7),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.lightbulb_outline, color: Theme.of(context).colorScheme.onSecondaryContainer, size: 20),
+                const SizedBox(width: 8),
+                Text(
+                  'Study Tip of the Day',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSecondaryContainer,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Text(
+              _currentStudyTip,
+              style: TextStyle(
+                fontSize: 14,
+                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.9),
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
