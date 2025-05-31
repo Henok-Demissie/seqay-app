@@ -1,14 +1,14 @@
-gradle-wrapper.jar
-/.gradle
-/captures/
-/gradlew
-/gradlew.bat
-/local.properties
-GeneratedPluginRegistrant.java
-.cxx/
+gradle-wrapper.jar              # Ignore Gradle wrapper JAR file (can be regenerated)
+/.gradle                       # Ignore Gradle cache directory (local build info)
+/captures/                    # Ignore Android Studio screen recording captures
+/gradlew                      # Ignore Unix Gradle wrapper script (can be regenerated)
+/gradlew.bat                  # Ignore Windows Gradle wrapper script (can be regenerated)
+/local.properties             # Ignore local environment config (contains SDK path)
+GeneratedPluginRegistrant.java # Ignore generated Flutter plugin registration file
+.cxx/                         # Ignore native build intermediates (C/C++ builds)
 
 # Remember to never publicly share your keystore.
 # See https://flutter.dev/to/reference-keystore
-key.properties
-**/*.keystore
-**/*.jks
+key.properties                # Ignore keystore configuration file (contains signing info)
+**/*.keystore                 # Ignore all keystore files (private app signing keys)
+**/*.jks                      # Ignore all Java keystore files (private keys)
