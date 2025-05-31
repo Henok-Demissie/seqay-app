@@ -32,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         const Text(
-          'John Doe',
+          'Gena Fayiso',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -40,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Text(
-          'Grade 12 Student',
+          'Freshman Student',
           style: TextStyle(
             color: Colors.grey.shade600,
             fontSize: 16,
@@ -109,7 +109,6 @@ class ProfileScreen extends StatelessWidget {
       ],
     );
   }
-
   Widget _buildSettings(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
