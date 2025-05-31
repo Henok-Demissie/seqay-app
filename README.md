@@ -1,7 +1,7 @@
 
 # 🎓 StudentHub (Seqay) – Your Personal Learning Companion
 
-**StudentHub (Seqay)** is a Flutter-based mobile application that empowers students with structured online learning, self-assessment tools, and an intelligent study scheduler — all in one place.
+**StudentHub (Seqay)** is a Flutter-based on mobile application that empowers students with structured online learning, self-assessment tools, and an intelligent study scheduler — all in one place.
 
 ---
 
@@ -71,7 +71,7 @@ Each screen is modular and focused on a specific feature to ensure clean archite
 
 ---
 
-## 🔐 Authentication
+## 🔐Authentication
 
 The app supports user registration and login using Firebase Authentication (email/password, Google Sign-In, etc.).
 
